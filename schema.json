@@ -1,0 +1,92 @@
+{
+  "type": "datasource",
+  "metadata": {},
+  "schema": {
+    "docs": "https://docs.budibase.com",
+    "friendlyName": "HubSpot",
+    "type": "HubSpot",
+    "description": "Connects to the HubSpot API",
+    "datasource": {
+      "private_app_token": {
+        "type": "string",
+        "required": false,
+        "display": "HubSpot Private App Token"
+      }
+    },
+    "query": {
+      "create": {
+        "type": "fields",
+        "fields": {
+          "properties": {
+            "display": "Property JSON String",
+            "type": "string",
+            "required": false
+          }
+        }
+      },
+      "read": {
+        "type": "fields",
+        "fields": {
+          "id": {
+            "display": "Record ID",
+            "type": "string",
+            "required": false
+          }
+        }
+      },
+      "update": {
+        "type": "fields",
+        "fields": {
+          "id": {
+            "display": "Record ID",
+            "type": "string",
+            "required": true
+          },
+          "properties": {
+            "display": "Property JSON String",
+            "type": "string",
+            "required": false
+          }
+        }
+      },
+      "delete": {
+        "type": "fields",
+        "fields": {
+          "id": {
+            "type": "string",
+            "required": true
+          }
+        }
+      }
+    },
+    "extra": {
+      "type": {
+        "displayName": "HubSpot Object Type",
+        "type": "list",
+        "required": true,
+        "data": {
+          "create": [
+            "contacts",
+            "companies",
+            "deals"
+          ],
+          "read": [
+            "contacts",
+            "companies",
+            "deals"
+          ],
+          "update": [
+            "contacts",
+            "companies",
+            "deals"
+          ],
+          "delete": [
+            "contacts",
+            "companies",
+            "deals"
+          ]
+        }
+      }
+    }
+  }
+}
